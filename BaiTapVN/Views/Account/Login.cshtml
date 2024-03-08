@@ -1,0 +1,69 @@
+﻿@model BaiTapVN.Models.RegisterModel
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+
+    .form-control {
+        width: 40%;
+        box-sizing: border-box;
+        margin: 10px;
+    }
+
+    .form-group label {
+        display: inline-block;
+        width: 20%;
+        vertical-align: top;
+        padding-right: 10px;
+        margin: 10px;
+    }
+</style>
+
+<div id="templatemo_content_right">
+
+    <h1>Đăng Nhập</h1>
+    <form asp-action="Login" method="post" onsubmit="return validateForm()">
+        <div class="form-group">
+            <label >Tên đăng nhập:</label>
+            <input asp-for="Username" class="form-control" placeholder="Tên đăng nhập của bạn" />
+        </div>
+        <div class="form-group">
+            <label >Mật khẩu:</label>
+            <input asp-for="Password" type="password" class="form-control" placeholder="Mật khẩu của bạn" />
+        </div>
+       
+        <button type="submit" class="btn btn-primary">Đăng Nhập</button>
+        @if (!string.IsNullOrEmpty(ViewData["LoginError"] as string))
+        {
+            <div class="inline-error">
+                @ViewData["LoginError"]
+            </div>
+        }
+        @if (!string.IsNullOrEmpty(ViewData["LoginError"] as string))
+        {
+            <div class="inline-error">
+                @ViewData["LogintkError"]
+            </div>
+        }
+    </form>
+
+    <div class="cleaner_with_height">&nbsp;</div>
+
+    <a href="index.html"><img src="~/images/templatemo_ads.jpg" alt="css template ad" /></a>
+
+</div> <!-- end of content right -->
+
+<script>
+    function validateForm() {
+        var username = document.getElementById('Username').value;
+        var password = document.getElementById('Password').value;
+        if (username === '' || password === '' ) {
+            alert('Vui lòng nhập đầy đủ thông tin đăng nhập');
+            return false;
+        }
+        return true;
+    }
+</script>

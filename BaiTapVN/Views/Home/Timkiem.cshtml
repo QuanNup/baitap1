@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewData["Title"] = "TimKiem";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="templatemo_content_right">
+
+    <h1>Tìm Kiếm <span>(By Name Book)</span></h1>
+    <style>
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+            .search-bar input[type="text"] {
+                width: 300px;
+                padding: 10px;
+                border: none;
+                border-radius: 20px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                outline: none;
+                font-size: 16px;
+            }
+
+            .search-bar button {
+                background-color: #007bff;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 20px;
+                color: white;
+                font-size: 16px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+
+                .search-bar button:hover {
+                    background-color: #0056b3;
+                }
+    </style>
+
+
+    <div class="search-bar">
+        <form action="/search" method="GET">
+            <input type="text" name="q" placeholder="Nhập từ khóa tìm kiếm...">
+            <button type="submit">Tìm kiếm</button>
+        </form>
+    </div>
+    <div class="cleaner_with_height">&nbsp;</div>
+
+    <a asp-controller ="Home"><img src="~/images/templatemo_ads.jpg" alt="css template ad" /></a>
+
+</div> <!-- end of content right -->
